@@ -1,0 +1,108 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+
+    <groupId>org.example</groupId>
+    <artifactId>DormManager</artifactId>
+    <version>1.0-SNAPSHOT</version>
+
+    <!-- 依赖的版本控制 -->
+    <properties>
+        <maven.compiler.source>8</maven.compiler.source>
+        <maven.compiler.target>8</maven.compiler.target>
+        <mysql.connect.version>8.0.30</mysql.connect.version>
+        <druid.version>1.2.15</druid.version>
+        <commons.dbutils.version>1.7</commons.dbutils.version>
+        <jakarta.jstl.version>2.0.0</jakarta.jstl.version>
+        <jakarta.servlet.api.version>5.0.0</jakarta.servlet.api.version>
+        <jakarta.servlet.jsp.version>3.0.0</jakarta.servlet.jsp.version>
+        <standard.version>1.1.2</standard.version>
+        <fastjson.version>2.0.20</fastjson.version>
+    </properties>
+
+    <!-- 项目构建配置 -->
+    <build>
+        <plugins>
+            <!-- 编译插件-jak1.8 -->
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-compiler-plugin</artifactId>
+                <version>3.1</version>
+                <configuration>
+                    <!-- 源代码使用的JDK版本 -->
+                    <source>1.8</source>
+                    <!-- 需要生成的目标class文件的编译版本 -->
+                    <target>1.8</target>
+                    <!-- 字符集编码 -->
+                    <encoding>UTF-8</encoding>
+                </configuration>
+            </plugin>
+
+        </plugins>
+    </build>
+
+    <!-- 依赖管理 -->
+    <dependencies>
+        <!--连接mysql数据库驱动的依赖-->
+        <dependency>
+            <groupId>mysql</groupId>
+            <artifactId>mysql-connector-java</artifactId>
+            <version>${mysql.connect.version}</version>
+            <scope>runtime</scope>
+        </dependency>
+
+        <!--druid数据库连接池的依赖-->
+        <dependency>
+            <groupId>com.alibaba</groupId>
+            <artifactId>druid</artifactId>
+            <version>${druid.version}</version>
+        </dependency>
+
+        <!--db-utils工具类的依赖-->
+        <dependency>
+            <groupId>commons-dbutils</groupId>
+            <artifactId>commons-dbutils</artifactId>
+            <version>${commons.dbutils.version}</version>
+        </dependency>
+
+        <!--Tomcat 10-->
+        <!--JsTl表达式的依赖-->
+        <dependency>
+            <groupId>org.glassfish.web</groupId>
+            <artifactId>jakarta.servlet.jsp.jstl</artifactId>
+            <version>${jakarta.jstl.version}</version>
+        </dependency>
+
+        <!--jsp的依赖-->
+        <dependency>
+            <groupId>jakarta.servlet.jsp</groupId>
+            <artifactId>jakarta.servlet.jsp-api</artifactId>
+            <version>${jakarta.servlet.jsp.version}</version>
+            <scope>provided</scope>
+        </dependency>
+
+        <!--servlet的jar包的依赖(用于编译时提示HttpServlet等)-->
+        <dependency>
+            <groupId>jakarta.servlet</groupId>
+            <artifactId>jakarta.servlet-api</artifactId>
+            <version>${jakarta.servlet.api.version}</version>
+            <scope>provided</scope>
+        </dependency>
+
+        <!--standard标签库-->
+        <dependency>
+            <groupId>taglibs</groupId>
+            <artifactId>standard</artifactId>
+            <version>${standard.version}</version>
+        </dependency>
+
+        <dependency>
+            <groupId>com.alibaba</groupId>
+            <artifactId>fastjson</artifactId>
+            <version>${fastjson.version}</version>
+        </dependency>
+    </dependencies>
+
+</project>
